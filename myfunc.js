@@ -97,16 +97,30 @@ $(function(){
 	var nlist_ul=mymap(nl_list);
 	$('.nl-list').append('<ul>'+nlist_ul+'</ul>');
 
-	$('.nl-list').append('<div class="show-list"></div>');
+	var mylist_item=[];
+	nl_list.map(function(k,v){
+		var li='';
+		for(var i=0;i<18;i++){
+			li+='<li><a href="#">'+k+'-'+i+'</a></li>'
+		}
+		mylist_item[v]=li;
+	})
+
+	$('.nl-list').append('<div class="show-list"><div class="mylist-item"></div><ul></ul></div>');
 
 	$('.nl-list li').append('<span class="nl-right"><i class="fa fa-angle-right"></i></span>');
 
-	$('.nl-list li').hover(function(){
-		$('.show-list').show();
-		$('.show-list').text($(this).text());
-	},function(){
-		$('.show-list').hide();
+	$('.nl-list li').each(function(i){
+		$(this).hover(function(){
+			$('.show-list').show();
+			$('.mylist-item').text($(this).text());
+			$('.show-list>ul').text('');
+			$('.show-list>ul').append(mylist_item[i]);
+		},function(){
+			$('.show-list').hide();
+		})
 	})
+
 	$('.show-list').hover(function(){
 		$('.show-list').show();
 	},function(){

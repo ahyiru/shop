@@ -317,18 +317,18 @@ a:hover{
 	width:100%;
 	position:relative;
 }
-.nl-list li{
+.nl-list>ul>li{
 	height:32px;
 	line-height:32px;
 	padding-left:20px;
 	border-bottom:1px solid #eee;
 	cursor:pointer;
 }
-.nl-list li:last-child{
+.nl-list>ul>li:last-child{
 	border-bottom:none;
 }
 
-.nl-list li:hover{
+.nl-list>ul>li:hover{
 	background:#fff;
 	color:#32CD32;
 }
@@ -342,12 +342,34 @@ a:hover{
 .show-list{
 	width:300px;
 	height:384px;
-	background:#ccc;
+	border-right:2px solid #20B2AA;
+	border-bottom:2px solid #20B2AA;
+	background:#fff;
 	position:absolute;
 	top:0;
 	left:210px;
 	display:none;
 	z-index:1000;
+}
+.show-list>div{
+	padding-left:20px;
+	color:#000;
+	font-size:14px;
+	font-weight:600;
+}
+.show-list>ul>li{
+	float:left;
+	height:32px;
+	line-height:32px;
+	padding-left:20px;
+	font-size:13px;
+	font-weight:500;
+}
+.show-list>ul>li>a{
+	color:#20B2AA;
+}
+.show-list>ul>li>a:hover{
+	color:#888;
 }
 
 
