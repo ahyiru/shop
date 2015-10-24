@@ -352,16 +352,17 @@ a:hover{
 	z-index:1000;
 }
 .show-list>div{
-	padding-left:20px;
+	padding:0 15px;
 	color:#000;
 	font-size:14px;
 	font-weight:600;
 }
+
 .show-list>ul>li{
 	float:left;
 	height:32px;
 	line-height:32px;
-	padding-left:20px;
+	padding:0 15px;
 	font-size:13px;
 	font-weight:500;
 }
